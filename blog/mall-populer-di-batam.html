@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7 Mall di Batam untuk Wisata Belanja | Queen Trans</title>
+
+
+
+
+
+
+
+
+
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="../image/logo-queen-rental-batam-murah.png"
+    />
+
+
+    <style>
+      :root {
+        --primary: #007fff;
+        --primary-dark: #0066cc;
+        --dark: #172033;
+        --gray: #64748b;
+        --light: #f7f9fc;
+        --border: #e2e8f0;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 92px;
+      }
+      body {
+        color: var(--dark);
+        background: #fff;
+        font-family: "Inter", sans-serif;
+        line-height: 1.75;
+      }
+      a {
+        color: inherit;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      .container {
+        width: min(1200px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 12px 0;
+        background: rgba(255, 255, 255, 0.98);
+        border-bottom: 1px solid var(--border);
+      }
+      .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 26px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+      .logo-icon {
+        width: 45px;
+        height: 45px;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+      .logo-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: scale(1.12);
+      }
+      .logo-text strong,
+      .logo-text span {
+        display: block;
+        white-space: nowrap;
+      }
+      .logo-text strong {
+        font:
+          800 17px/1.1 "Manrope",
+          sans-serif;
+      }
+      .logo-text span {
+        margin-top: 4px;
+        color: var(--gray);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+      }
+      header nav ul {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        list-style: none;
+      }
+      header nav a {
+        padding: 7px 0;
+        color: var(--dark);
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      header nav a:hover,
+      header nav a.active {
+        color: var(--primary);
+      }
+      .mobile-toggle {
+        display: none;
+        width: 40px;
+        height: 40px;
+        color: var(--primary);
+        background: #eaf4ff;
+        border: 0;
+        border-radius: 8px;
+        font-size: 20px;
+      }
+      article {
+        width: min(820px, calc(100% - 40px));
+        margin: 46px auto 80px;
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 26px;
+        color: var(--primary);
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .breadcrumb {
+        margin-bottom: 18px;
+        color: var(--gray);
+        font-size: 13px;
+      }
+      .breadcrumb a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+      .category {
+        display: inline-block;
+        margin-bottom: 14px;
+        padding: 6px 12px;
+        color: #fff;
+        background: var(--primary);
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Manrope", sans-serif;
+        line-height: 1.25;
+      }
+      h1 {
+        max-width: 780px;
+        margin-bottom: 18px;
+        font-size: clamp(2rem, 5vw, 3rem);
+        letter-spacing: -0.04em;
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-bottom: 30px;
+        color: var(--gray);
+        font-size: 13px;
+      }
+      .meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .hero-image {
+        width: 100%;
+        aspect-ratio: 16/9;
+        margin-bottom: 34px;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+      .lead {
+        color: #334155;
+        font-size: 1.12rem;
+      }
+      .notice {
+        margin: 28px 0;
+        padding: 18px 20px;
+        background: #eaf4ff;
+        border-left: 4px solid var(--primary);
+        border-radius: 8px;
+      }
+      .notice strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+      .mall-list {
+        display: grid;
+        gap: 22px;
+        margin: 32px 0;
+        counter-reset: mall;
+      }
+      .mall-card {
+        position: relative;
+        padding: 26px 26px 24px 76px;
+        background: var(--light);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        counter-increment: mall;
+      }
+      .mall-card::before {
+        content: counter(mall);
+        position: absolute;
+        top: 25px;
+        left: 24px;
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        color: #fff;
+        background: var(--primary);
+        border-radius: 10px;
+        font:
+          800 16px "Manrope",
+          sans-serif;
+      }
+      .mall-card h2 {
+        margin-bottom: 5px;
+        font-size: 1.35rem;
+      }
+      .mall-location {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--primary-dark);
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .mall-card p {
+        color: #475569;
+      }
+      h2.section-heading {
+        margin: 42px 0 14px;
+        font-size: 1.6rem;
+      }
+      .tips {
+        padding-left: 22px;
+        color: #475569;
+      }
+      .tips li {
+        margin-bottom: 9px;
+      }
+      .cta {
+        margin-top: 42px;
+        padding: 30px;
+        color: #fff;
+        background: linear-gradient(135deg, #168bff, #0066cc);
+        border-radius: 16px;
+      }
+      .cta h2 {
+        margin-bottom: 9px;
+        font-size: 1.55rem;
+      }
+      .cta p {
+        margin-bottom: 18px;
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .cta a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 16px;
+        color: var(--primary-dark);
+        background: #fff;
+        border-radius: 8px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+      .sources {
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      .sources h2 {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+      .sources ul {
+        padding-left: 20px;
+        color: var(--gray);
+        font-size: 13px;
+      }
+      .sources a {
+        color: var(--primary-dark);
+      }
+      footer {
+        padding: 30px 20px;
+        color: rgba(255, 255, 255, 0.72);
+        background: #0f172a;
+        text-align: center;
+        font-size: 12px;
+      }
+      .floating-wa {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 900;
+        display: grid;
+        place-items: center;
+        width: 56px;
+        height: 56px;
+        color: #fff;
+        background: #25d366;
+        border-radius: 50%;
+        font-size: 25px;
+        text-decoration: none;
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+      }
+      @media (max-width: 1024px) {
+        .header-container {
+          position: relative;
+        }
+        .mobile-toggle {
+          display: grid;
+          place-items: center;
+          margin-left: auto;
+          order: 3;
+        }
+        header nav {
+          position: absolute;
+          top: calc(100% + 12px);
+          left: 0;
+          right: 0;
+          display: none;
+          padding: 14px;
+          background: #fff;
+          border: 1px solid var(--border);
+          box-shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+        }
+        header nav.active {
+          display: block;
+        }
+        header nav ul {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 2px;
+        }
+        header nav a {
+          display: block;
+          padding: 10px 12px;
+        }
+      }
+      @media (max-width: 600px) {
+        .container,
+        article {
+          width: min(100% - 28px, 820px);
+        }
+        .logo-text strong {
+          font-size: 13px;
+        }
+        .logo-text span {
+          font-size: 8px;
+        }
+        article {
+          margin-top: 30px;
+        }
+        .hero-image {
+          border-radius: 10px;
+        }
+        .mall-card {
+          padding: 68px 20px 22px;
+        }
+        .mall-card::before {
+          top: 20px;
+          left: 20px;
+        }
+        .cta {
+          padding: 24px 20px;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="../assets/generated/responsive.min.css?v=619e0d9ffc70" />
+    <link rel="stylesheet" href="../assets/generated/ui-refinement.min.css?v=25f3fc9a3689" />
+    <link rel="stylesheet" href="../assets/generated/blog-enhancements.min.css?v=cbfd2cd06243" />
+    <link rel="stylesheet" href="../assets/generated/design-system.min.css?v=84d5bcba7429" />
+    <link rel="stylesheet" href="../assets/generated/apple-refinement.min.css?v=3c83c7e3f7c4" />
+
+    <!-- Canonical metadata and source-grounded structured data. -->
+    <link rel="canonical" href="https://queentransbatam.com/blog/mall-populer-di-batam.html" />
+    <meta name="description" content="Panduan tujuh mall di Batam: K Square, Mega Mall, One Batam Mall, Grand Batam, DC Mall, BCS Mall, dan Mall Botania 2. Pilih sesuai kawasan perjalanan." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Queen Trans Batam" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Queen Trans Batam" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:title" content="7 Mall di Batam untuk Wisata Belanja | Queen Trans" />
+    <meta property="og:description" content="Panduan tujuh mall di Batam: K Square, Mega Mall, One Batam Mall, Grand Batam, DC Mall, BCS Mall, dan Mall Botania 2. Pilih sesuai kawasan perjalanan." />
+    <meta property="og:url" content="https://queentransbatam.com/blog/mall-populer-di-batam.html" />
+    <meta property="og:image" content="https://queentransbatam.com/image/mall-batam-wisatawan.jpg?v=20260930-50kb" />
+    <meta property="og:image:width" content="601" />
+    <meta property="og:image:height" content="338" />
+    <meta property="og:image:alt" content="Wisatawan menikmati suasana pusat perbelanjaan modern di Batam" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="7 Mall di Batam untuk Wisata Belanja | Queen Trans" />
+    <meta name="twitter:description" content="Panduan tujuh mall di Batam: K Square, Mega Mall, One Batam Mall, Grand Batam, DC Mall, BCS Mall, dan Mall Botania 2. Pilih sesuai kawasan perjalanan." />
+    <meta name="twitter:image" content="https://queentransbatam.com/image/mall-batam-wisatawan.jpg?v=20260930-50kb" />
+    <meta name="twitter:image:alt" content="Wisatawan menikmati suasana pusat perbelanjaan modern di Batam" />
+    <meta property="article:published_time" content="2026-08-30" />
+    <meta property="article:modified_time" content="2026-09-30" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AutoRental",
+      "@id": "https://queentransbatam.com/#business",
+      "name": "Queen Trans Batam",
+      "legalName": "PT Queen Trans Utama",
+      "url": "https://queentransbatam.com/",
+      "description": "Layanan rental mobil lepas kunci, kendaraan dengan pengemudi, antar-jemput bandara dan pelabuhan, serta transportasi rombongan di Batam.",
+      "logo": "https://queentransbatam.com/image/logo-queen-rental-batam-murah.png",
+      "image": "https://queentransbatam.com/image/hero-queen-trans.jpg?v=20260930-50kb",
+      "telephone": "+62-877-9191-8354",
+      "email": "queentransbatam@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kurnia Djaya Cluster, Jl. Elang III No.11",
+        "addressLocality": "Batam",
+        "addressRegion": "Kepulauan Riau",
+        "postalCode": "29464",
+        "addressCountry": "ID"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Batam"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-877-9191-8354",
+        "contactType": "Informasi dan pemesanan",
+        "areaServed": "Batam",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://queentransbatam.com/#website",
+      "url": "https://queentransbatam.com/",
+      "name": "Queen Trans Batam",
+      "inLanguage": "id-ID",
+      "publisher": {
+        "@id": "https://queentransbatam.com/#business"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://queentransbatam.com/blog/mall-populer-di-batam.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://queentransbatam.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://queentransbatam.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mall di Batam",
+          "item": "https://queentransbatam.com/blog/mall-populer-di-batam.html"
+        }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://queentransbatam.com/blog/mall-populer-di-batam.html#article",
+      "url": "https://queentransbatam.com/blog/mall-populer-di-batam.html",
+      "headline": "7 Pusat Belanja Favorit Wisatawan di Batam",
+      "description": "Panduan tujuh mall di Batam: K Square, Mega Mall, One Batam Mall, Grand Batam, DC Mall, BCS Mall, dan Mall Botania 2. Pilih sesuai kawasan perjalanan.",
+      "inLanguage": "id-ID",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://queentransbatam.com/image/mall-batam-wisatawan.jpg?v=20260930-50kb",
+        "width": 601,
+        "height": 338
+      },
+      "datePublished": "2026-08-30",
+      "dateModified": "2026-09-30",
+      "author": {
+        "@id": "https://queentransbatam.com/#business",
+        "name": "Queen Trans Batam",
+        "url": "https://queentransbatam.com/tentang-kami.html"
+      },
+      "publisher": {
+        "@id": "https://queentransbatam.com/#business"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://queentransbatam.com/blog/mall-populer-di-batam.html#webpage"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "7 Pusat Belanja Favorit Wisatawan di Batam"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://queentransbatam.com/blog/mall-populer-di-batam.html#webpage",
+      "url": "https://queentransbatam.com/blog/mall-populer-di-batam.html",
+      "name": "7 Mall di Batam untuk Wisata Belanja | Queen Trans",
+      "description": "Panduan tujuh mall di Batam: K Square, Mega Mall, One Batam Mall, Grand Batam, DC Mall, BCS Mall, dan Mall Botania 2. Pilih sesuai kawasan perjalanan.",
+      "inLanguage": "id-ID",
+      "isPartOf": {
+        "@id": "https://queentransbatam.com/#website"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "7 Pusat Belanja Favorit Wisatawan di Batam"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://queentransbatam.com/image/mall-batam-wisatawan.jpg?v=20260930-50kb",
+        "width": 601,
+        "height": 338
+      },
+      "breadcrumb": {
+        "@id": "https://queentransbatam.com/blog/mall-populer-di-batam.html#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://queentransbatam.com/blog/mall-populer-di-batam.html#article"
+      }
+    }
+  ]
+}
+    </script>
+    <link rel="stylesheet" href="../assets/generated/seo-content.min.css?v=5b78ef763846" />
+    <link rel="stylesheet" href="../assets/icons/icons.css?v=20261028-1" />
+  </head>
+
+  <body class="mall-guide-page">
+    <header>
+      <div class="header-container container">
+        <a href="../index.html" class="logo">
+          <div class="logo-icon">
+            <img width="500" height="500"
+              src="../image/logo-queen-120.webp"
+              alt="Queen Trans Batam Logo"
+            />
+          </div>
+          <div class="logo-text">
+            <strong>QUEEN TRANS BATAM</strong><span>Travel and Transport</span>
+          </div>
+        </a>
+        <button
+          class="mobile-toggle"
+          type="button"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../tentang-kami.html">Tentang Kami</a></li>
+            <li><a href="../index.html#cars">Armada</a></li>
+            <li><a href="../testimoni.html">Testimoni</a></li>
+            <li><a href="../blog.html" class="active">Blog</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="main-content" role="main">
+    <article class="mall-guide">
+      <a class="back-link" href="../blog.html"
+        ><i class="fas fa-arrow-left"></i> Kembali ke Blog</a
+      >
+      <div class="article-header">
+        <nav class="site-breadcrumb" aria-label="Jejak halaman"><ol><li><a href="../index.html">Beranda</a></li><li><a href="../blog.html">Blog</a></li><li><span aria-current="page">Mall di Batam</span></li></ol></nav>
+        <span class="category">Panduan Wisata</span>
+        <h1>7 Pusat Belanja Favorit Wisatawan di Batam</h1>
+        <div class="meta">
+          <span><i class="far fa-calendar"></i> 30 Agustus 2026</span>
+          <span><i class="far fa-clock"></i> 7 menit baca</span>
+          <span><i class="fas fa-location-dot"></i> Batam</span>
+        </div>
+      </div>
+
+      <div class="article-content">
+<nav class="article-toc" aria-label="Daftar isi artikel"><h2>Daftar Isi</h2><ol><li><a href="#ringkasan-artikel">Ringkasan panduan</a></li><li><a href="#k-square-mall-batam">K Square Mall Batam</a></li><li><a href="#mega-mall-batam-centre">Mega Mall Batam Centre</a></li><li><a href="#one-batam-mall">One Batam Mall</a></li><li><a href="#grand-batam-mall">Grand Batam Mall</a></li><li><a href="#dc-mall">DC Mall</a></li><li><a href="#bcs-mall">BCS Mall</a></li><li><a href="#mall-botania-2">Mall Botania 2</a></li><li><a href="#cara-memilih-pusat-belanja-yang-sesuai">Cara Memilih Pusat Belanja yang Sesuai</a></li><li><a href="#ingin-berkeliling-pusat-belanja-batam">Ingin berkeliling pusat belanja Batam?</a></li><li><a href="#sumber-informasi">Sumber informasi</a></li></ol></nav>
+<section class="article-summary" aria-labelledby="ringkasan-artikel"><h2 id="ringkasan-artikel">Ringkasan panduan</h2><ul><li>Pilih pusat belanja berdasarkan lokasi hotel, pelabuhan, dan tujuan berikutnya.</li><li>Panduan ini mencakup K Square, Mega Mall, One Batam Mall, Grand Batam, DC Mall, BCS Mall, dan Mall Botania 2.</li><li>Jam buka, tenant, acara, dan akses dapat berubah; periksa informasi resmi pengelola sebelum berkunjung.</li></ul><p class="article-source">Oleh <a href="../tentang-kami.html">Queen Trans Batam — PT Queen Trans Utama</a>. Diperbarui <time datetime="2026-09-30">30 September 2026</time>.</p></section>
+        <img
+          class="hero-image"
+          src="../image/mall-batam-wisatawan.webp?v=20260930-50kb"
+          alt="Wisatawan menikmati suasana pusat perbelanjaan modern di Batam"
+          width="1672"
+          height="941"
+        />
+
+        <p class="lead">
+          Wisata belanja menjadi salah satu agenda favorit selama berada di
+          Batam. Pilihannya tersebar dari Batam Centre dan Sukajadi hingga Baloi
+          dan Nagoya. Agar perjalanan tetap nyaman, pilih pusat belanja yang
+          paling dekat dengan pelabuhan, hotel, atau tujuan berikutnya.
+        </p>
+
+        <div class="notice">
+          <strong>Sebelum berangkat</strong>
+          Jam buka, tenant, acara, dan akses dapat berubah. Periksa akun atau
+          situs resmi masing-masing mal pada hari kunjungan.
+        </div>
+
+        <div class="mall-list">
+          <section class="mall-card">
+            <h2 id="k-square-mall-batam">K Square Mall Batam</h2>
+            <span class="mall-location"
+              ><i class="fas fa-location-dot"></i> Jalan Jenderal Sudirman,
+              Sukajadi</span
+            >
+            <p>
+              Pusat belanja baru di kawasan Sukajadi yang diresmikan pada
+              Desember 2025. K Square cocok untuk wisatawan yang ingin menikmati
+              pilihan belanja dan hiburan baru di jalur Batam Kota.
+            </p>
+          </section>
+
+          <section class="mall-card">
+            <h2 id="mega-mall-batam-centre">Mega Mall Batam Centre</h2>
+            <span class="mall-location"
+              ><i class="fas fa-location-dot"></i> Batam Centre</span
+            >
+            <p>
+              Pilihan paling praktis bagi penumpang feri karena terhubung
+              langsung dengan Terminal Ferry Internasional Batam Centre. Cocok
+              dikunjungi setelah tiba atau sebelum kembali ke pelabuhan.
+            </p>
+          </section>
+
+          <section class="mall-card">
+            <h2 id="one-batam-mall">One Batam Mall</h2>
+            <span class="mall-location"
+              ><i class="fas fa-location-dot"></i> Teluk Tering, Batam
+              Kota</span
+            >
+            <p>
+              Pilihan nyaman untuk keluarga yang beraktivitas di Batam Kota.
+              Anda dapat menggabungkan agenda belanja, makan, dan hiburan dalam
+              satu pemberhentian.
+            </p>
+          </section>
+
+          <section class="mall-card">
+            <h2 id="grand-batam-mall">Grand Batam Mall</h2>
+            <span class="mall-location"
+              ><i class="fas fa-location-dot"></i> Jalan Pembangunan, Batu
+              Selicin</span
+            >
+            <p>
+              Salah satu tujuan belanja utama di Batam dengan pilihan retail,
+              kuliner, dan hiburan yang lengkap. Lokasinya sesuai untuk
+              wisatawan yang menginap di kawasan Baloi atau Nagoya.
+            </p>
+          </section>
+
+          <section class="mall-card">
+            <h2 id="dc-mall">DC Mall</h2>
+            <span class="mall-location"
+              ><i class="fas fa-location-dot"></i> Tanjung Uma, Lubuk Baja</span
+            >
+            <p>
+              Alternatif pusat belanja di dekat kawasan komersial Nagoya. DC
+              Mall cocok untuk memenuhi kebutuhan harian atau mencari makanan
+              saat perjalanan berfokus di Lubuk Baja.
+            </p>
+          </section>
+
+          <section class="mall-card">
+            <h2 id="bcs-mall">BCS Mall</h2>
+            <span class="mall-location"
+              ><i class="fas fa-location-dot"></i> Jalan Bunga Raya, Baloi</span
+            >
+            <p>
+              BCS Mall berada di kawasan Baloi dan mudah dipadukan dengan Grand
+              Batam serta area kuliner sekitarnya. Pilihannya mencakup retail,
+              makanan, supermarket, dan hiburan.
+            </p>
+          </section>
+
+          <section class="mall-card">
+            <h2 id="mall-botania-2">Mall Botania 2</h2>
+            <span class="mall-location"
+              ><i class="fas fa-location-dot"></i> Jalan Raja Alikelana,
+              Belian</span
+            >
+            <p>
+              Mall Botania 2 atau MB2 praktis bagi wisatawan yang datang dari
+              arah Bandara Hang Nadim. Cocok untuk makan, kebutuhan keluarga,
+              atau beristirahat sebelum menuju pusat kota.
+            </p>
+          </section>
+        </div>
+
+        <h2 class="section-heading" id="cara-memilih-pusat-belanja-yang-sesuai">Cara Memilih Pusat Belanja yang Sesuai</h2>
+        <ul class="tips">
+          <li>
+            <strong>Dari Batam Centre:</strong> prioritaskan Mega Mall atau One
+            Batam Mall agar waktu perjalanan lebih efisien.
+          </li>
+          <li>
+            <strong>Menginap di Baloi atau Nagoya:</strong> Grand Batam, BCS
+            Mall, dan DC Mall lebih mudah digabungkan dalam satu rute.
+          </li>
+          <li>
+            <strong>Dari Bandara Hang Nadim:</strong> Mall Botania 2 dapat
+            dijadikan pemberhentian sebelum menuju pusat kota.
+          </li>
+          <li>
+            <strong>Ingin mencoba tempat baru:</strong> pertimbangkan K Square
+            di kawasan Sukajadi.
+          </li>
+          <li>
+            Hindari memasukkan terlalu banyak mal dalam satu hari; sisakan waktu
+            untuk antrean, makan, dan lalu lintas.
+          </li>
+        </ul>
+
+        <div class="cta">
+          <h2 id="ingin-berkeliling-pusat-belanja-batam">Ingin berkeliling pusat belanja Batam?</h2>
+          <p>
+            Sampaikan lokasi penjemputan, jumlah penumpang, dan daftar mal yang
+            ingin dikunjungi. Tim Queen Trans Batam dapat membantu menyiapkan
+            kendaraan sesuai rute.
+          </p>
+          <a href="../index.html#booking"
+            >Rencanakan Perjalanan <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <section class="sources">
+          <h2 id="sumber-informasi">Sumber informasi</h2>
+          <ul>
+            <li>
+              <a
+                href="https://batam.go.id/amsakar-li-claudia-resmikan-k-square-optimistis-jadi-magnet-ekonomi-baru-batam/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Pemerintah Kota Batam — Peresmian K Square</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.megamallbatam.com/home"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Situs resmi Mega Mall Batam Centre</a
+              >
+            </li>
+            <li>
+              <a href="https://grandbatam.com/" target="_blank" rel="noopener noreferrer"
+                >Situs resmi Grand Batam Mall</a
+              >
+            </li>
+            <li>
+              <a href="https://onebatammall.com/" target="_blank" rel="noopener noreferrer"
+                >Situs resmi One Batam Mall</a
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
+    </article>
+    </div>
+
+    <footer><div class="container"><nav class="legal-navigation" aria-label="Legalitas"><h2>Legalitas</h2><ul>
+<li><a href="../tentang-kami.html#legalitas">Legal</a></li>
+<li><a href="../kebijakan-privasi.html">Kebijakan Privasi</a></li>
+<li><a href="../ketentuan-layanan.html">Ketentuan Layanan</a></li>
+</ul></nav></div>
+<div class="container"><div class="footer-copyright">
+<p>&copy; 2026 Queen Trans Batam. Semua hak dilindungi.</p>
+<p class="footer-credit">Published by Sticky Studio</p>
+</div></div>
+</footer>
+    <a
+      href="https://wa.me/6287791918354"
+      class="floating-wa"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat WhatsApp"
+      ><i class="fab fa-whatsapp"></i
+    ></a>
+    <script defer data-language-src="../assets/generated/lang.min.js?v=f89869118d1f" src="../assets/generated/language-switcher.min.js?v=96b76ef8d918"></script>
+    <script defer src="../assets/generated/smooth-scroll.min.js?v=22284ad80c1b"></script>
+    <script defer src="../assets/generated/blog-enhancements.min.js?v=1630c6834515"></script>
+  </body>
+</html>

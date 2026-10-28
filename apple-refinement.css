@@ -1,0 +1,493 @@
+/* Shared Apple-inspired finish. Loaded after the existing page styles. */
+:root {
+  --qt-font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --qt-font-heading: var(--qt-font-body);
+  --qt-title-section: clamp(2rem, 4vw, 3.25rem);
+  --qt-title-page: clamp(2.5rem, 5vw, 4rem);
+  --qt-line-copy: 1.65;
+  --qt-line-heading: 1.12;
+  --qt-tracking-heading: -0.035em;
+  --qt-tracking-label: 0.07em;
+  --radius: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --qt-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .35s ease, transform .4s var(--qt-ease);
+}
+body { color: #1d1d1f; font-family: var(--qt-font-body); }
+body :is(h1,h2,h3,h4,h5,h6,.nav-logo-name,.hero-trust-num,.car-price,.price-amount) {
+  font-family: var(--qt-font-heading);
+}
+body :is(.container,.blog-container) { max-width: 1200px; }
+body :is(.section-title,.about-hero h1,.faq-page-hero h1,.blog-hero h1) {
+  font-weight: 650;
+  letter-spacing: -.035em;
+  line-height: 1.12;
+}
+body :is(.section-title) { font-size: var(--qt-title-section); margin-bottom: 20px; }
+body :is(.section-subtitle,.hero-sub) { font-size: clamp(1rem, 1.5vw, 1.1875rem); line-height: 1.65; max-width: 54ch; }
+body :is(.section-label,.eyebrow,.section-kicker) { font-weight: 600; margin-bottom: 16px; }
+#header, #header.scrolled, body > header:not(#header) {
+  top: 0;
+  background: rgba(255,255,255,.88);
+  border-bottom: 1px solid rgba(29,29,31,.09);
+  box-shadow: none;
+  -webkit-backdrop-filter: saturate(160%) blur(24px);
+  backdrop-filter: saturate(160%) blur(24px);
+}
+#header .header-inner { min-height: 76px; height: 76px; padding-inline: 0; gap: 24px; }
+body .nav-link { font-weight: 500; }
+body .nav-logo-name { font-weight: 700; letter-spacing: -.025em; }
+body .nav-logo-tagline { letter-spacing: .09em; line-height: 1.6; }
+body .hero { min-height: 780px; height: auto; }
+body .hero-content-wrap { padding-top: 168px; padding-bottom: 88px; }
+body .hero-headline {
+  max-width: 20ch;
+  font-size: clamp(2.75rem, 5.4vw, 4.75rem);
+  font-weight: 650;
+  line-height: 1.055;
+  letter-spacing: -.045em;
+  margin-bottom: 28px;
+}
+body .hero-overlay { background: linear-gradient(90deg,rgba(9,17,27,.9),rgba(9,17,27,.64) 48%,rgba(9,17,27,.12)); }
+body .hero-label { border: 0; padding: 0; letter-spacing: .09em; font-weight: 500; margin-bottom: 24px; }
+body .hero-sub { color: rgba(255,255,255,.85); margin-bottom: 32px; }
+body .hero-trust { gap: 28px; margin-top: 48px; padding-top: 28px; }
+body .hero-trust-num { font-size: 1.65rem; font-weight: 600; letter-spacing: -.03em; }
+body .hero-trust-label { font-size: .75rem; letter-spacing: 0; text-transform: none; color: rgba(255,255,255,.78); }
+body :is(.btn,.hero-btns .btn-lg) { border-radius: 999px; padding: 13px 24px; min-height: 46px; font-weight: 500; letter-spacing: -.01em; transition: var(--transition); }
+body .hero .btn-outline-white { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.55); }
+body :is(.why-section,.fleet-section,.services-section,.experience-section,.testimonials-section,.faq-section,.booking-form-section,.map-section) { padding-block: clamp(72px, 8vw, 112px); }
+body :is(.why-section,.experience-section,.booking-form-section) { background: #f5f5f7; }
+body :is(.why-header,.fleet-header,.services-header,.testimonials-header) { margin-bottom: 48px; }
+body :is(.why-grid,.cars-grid,.services-grid,.testi-grid) { gap: 24px; }
+body :is(.why-card,.car-card,.service-card,.testi-card,.booking-form-card,.blog-card,.real-experience-card) {
+  border-radius: 24px;
+  border-color: rgba(29,29,31,.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,.025);
+  transition: var(--transition);
+}
+body :is(.why-card,.testi-card,.service-card) { padding: 32px; }
+body :is(.why-card h3,.service-card h3,.car-title h3) { font-size: 1.25rem; font-weight: 650; letter-spacing: -.025em; }
+body :is(.why-card p,.testi-text) { color: #626267; }
+body :is(.why-icon,.service-icon-wrap) { border-radius: 16px; margin-bottom: 24px; }
+body .car-info { padding: 24px; }
+body .car-pricing { background: #f5f5f7; border-radius: 14px; padding: 16px; }
+body .car-image { overflow: hidden; }
+body .car-image img { transition: transform .6s var(--qt-ease); }
+body .fleet-filter { gap: 8px; margin-bottom: 32px; }
+body .filter-btn { border-radius: 999px; padding: 11px 22px; min-height: 44px; font-weight: 500; background: #f5f5f7; border-color: transparent; transition: var(--transition); }
+body .services-section { background: #101c2c; }
+body .service-card { background: rgba(255,255,255,.055); border-color: rgba(255,255,255,.13); backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; }
+body .service-icon-wrap { background: rgba(255,255,255,.09); box-shadow: none; border-color: transparent; }
+body :is(.exp-card,.map-frame,.faq-contact,.cta-box) { border-radius: 24px; }
+body .booking-cta-section { background: #0066cc; border: 0; padding-block: 80px; }
+body .booking-form-card { padding: clamp(24px,4vw,48px); background: #fff; }
+body .form-control { border-radius: 12px; min-height: 52px; border-color: #d2d2d7; transition: var(--transition); }
+body .form-label { font-weight: 500; margin-bottom: 10px; }
+body .service-choice-content { border-radius: 16px; }
+body .faq-item { border-radius: 16px; }
+body footer { background: #17202d; }
+body .article-content { font-size: 1.0625rem; line-height: 1.8; }
+body :is(.about-hero,.faq-page-hero) { background: #0066cc; }
+body :is(.about-hero,.faq-page-hero,.blog-hero) { padding-block: clamp(64px,7vw,96px); }
+body :is(.about-hero h1,.faq-page-hero h1,.blog-hero h1) { font-size: var(--qt-title-page); }
+body :is(.company-section,.legal-section,.contact-section,.faq-page-section) { padding-block: clamp(72px,8vw,112px); }
+body .faq-page-section { background: #f5f5f7; }
+body :is(.hero-copy,.faq-page-hero p,.blog-hero p) { max-width: 60ch; font-size: clamp(1rem,1.5vw,1.1875rem); line-height: 1.65; }
+body :is(.btn,.filter-btn):active { transform: scale(.98); }
+body .form-control:focus { border-color: #0066cc; box-shadow: 0 0 0 4px rgba(0,102,204,.12); }
+/* Preserve readable spacing in the Chinese translation. */
+html[lang="zh-CN"] body :is(h1,h2,h3,h4,h5,h6,.hero-headline,.section-title) { letter-spacing: 0; line-height: 1.25; }
+@media (min-width: 1025px) and (max-width: 1240px) {
+  #header .nav-phone { display: none; }
+  #header .header-inner { gap: 16px; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  body :is(.container,.blog-container) { max-width: calc(100% - 48px); }
+}
+@supports not ((backdrop-filter: blur(24px)) or (-webkit-backdrop-filter: blur(24px))) {
+  #header, #header.scrolled, body > header:not(#header) { background: #fff; }
+}
+@media (hover: hover) and (pointer: fine) {
+  body :is(.why-card,.car-card,.testi-card,.blog-card,.real-experience-card):hover { transform: translateY(-4px); border-color: rgba(29,29,31,.12); box-shadow: 0 16px 40px rgba(0,0,0,.075); }
+  body .service-card:hover { transform: translateY(-4px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.25); box-shadow: none; }
+  body .car-card:hover .car-image img { transform: scale(1.035); }
+  body .btn:hover { transform: translateY(-1px); }
+}
+@media (max-width: 768px) {
+  body :is(.container,.blog-container) { width: 100%; max-width: 100%; padding-inline: 24px; }
+  #header .header-inner { min-height: 64px; height: 64px; gap: 12px; }
+  body .hero { min-height: 0; }
+  body .hero-content-wrap { padding-top: 124px; padding-bottom: 64px; }
+  body .hero-headline { font-size: clamp(2.5rem,9vw,3.75rem); max-width: 20ch; }
+  body .hero-overlay { background: linear-gradient(90deg,rgba(9,17,27,.88),rgba(9,17,27,.52)); }
+  body .hero-trust { gap: 24px; margin-top: 36px; }
+  body :is(.why-header,.fleet-header,.services-header,.testimonials-header) { margin-bottom: 32px; }
+  body :is(.why-card,.testi-card,.service-card,.car-info) { padding: 24px; }
+  body :is(.why-grid,.cars-grid,.services-grid,.testi-grid) { gap: 20px; }
+  body .fleet-filter { flex-wrap: wrap; gap: 8px; }
+  body .filter-btn { padding-inline: 16px; }
+  body .booking-cta-section { padding-block: 64px; }
+}
+@media (max-width: 380px) {
+  body :is(.container,.blog-container) { padding-inline: 18px; }
+  body .hero-btns { gap: 12px; }
+  body .hero-btns .btn { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body :is(.btn,.filter-btn):active { transform: none; }
+  body .car-card:hover .car-image img, body :is(.why-card,.car-card,.testi-card,.blog-card,.real-experience-card,.service-card,.btn):hover { transform: none; }
+}
+
+/* Navbar typography: one scale across the three existing header templates. */
+body > header :is(.nav-logo-text,.logo-text) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+body > header :is(.nav-logo-name,.logo-text .logo-heading) {
+  display: block;
+  margin: 0;
+  font-family: var(--qt-font-body);
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 20px;
+  letter-spacing: -.02em;
+  white-space: nowrap;
+}
+body > header :is(.nav-logo-tagline,.logo-text p) {
+  display: block;
+  margin: 0;
+  color: #626267;
+  font-family: var(--qt-font-body);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: .055em;
+  white-space: nowrap;
+}
+body > header :is(.nav-logo,.logo) { gap: 10px; flex-shrink: 0; }
+body > header :is(.nav-logo-icon,.logo-icon) { width: 40px; height: 40px; flex: 0 0 40px; }
+body > header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 9px;
+  font-family: var(--qt-font-body);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-transform: none;
+  color: #424245;
+}
+body > header nav a.active { font-weight: 500; color: #0066cc; }
+body > header :is(.nav-phone,.btn,.language-switcher,.language-toggle,.language-option) {
+  font-family: var(--qt-font-body);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+body > header :is(.nav-cta,.header-cta) { gap: 10px; align-items: center; }
+body > header .btn,
+body > #header #navBookBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+}
+body > header .language-toggle {
+  min-height: 40px;
+  height: 40px;
+  padding: 0 10px;
+  gap: 6px;
+  border-color: #e5e5e7;
+  background: transparent;
+  border-radius: 999px;
+  box-shadow: none;
+}
+body > header .language-code { font-size: 11px; font-weight: 500; }
+@media (min-width: 1025px) {
+  body > header :is(.header-inner,.header-container) { gap: 20px; }
+  body > header nav { flex-shrink: 0; margin-left: auto; }
+  body > header nav > ul { display: flex; align-items: center; gap: 4px; margin: 0; padding: 0; }
+  body > header nav a::after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    right: 9px;
+    bottom: 5px;
+    width: auto;
+    height: 1px;
+    border-radius: 0;
+    background: currentColor;
+    transform: scaleX(0);
+    transition: transform .25s ease;
+  }
+  body > header nav a:hover::after,
+  body > header nav a.active::after { width: auto; transform: scaleX(1); }
+  body > header .nav-cta { margin-left: 0; }
+}
+/* Reserve enough room for navigation and translated booking labels. */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  body > header .nav-phone { display: none; }
+}
+@media (max-width: 1024px) {
+  /* Existing mobile menu declarations use !important; match them here. */
+  body > #header nav.qt-mobile-nav a,
+  body > header:not(#header) nav.qt-mobile-nav a {
+    font-family: var(--qt-font-body);
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 22px !important;
+    letter-spacing: 0;
+  }
+  body > header nav .language-toggle { font-size: 14px; font-weight: 500; line-height: 22px; }
+}
+@media (max-width: 480px) {
+  body > header :is(.nav-logo-name,.logo-text .logo-heading) { font-size: 12px; line-height: 17px; }
+  body > header :is(.nav-logo-tagline,.logo-text p) { font-size: 9px; line-height: 13px; letter-spacing: .035em; }
+  body > header :is(.nav-logo-icon,.logo-icon) { width: 34px; height: 34px; flex-basis: 34px; }
+  body > header :is(.nav-logo,.logo) { gap: 8px; }
+}
+
+/* Keep phone navigation focused on the brand and menu toggle. */
+@media (max-width: 768px) {
+  body > #header #navBookBtn,
+  body > header .nav-cta > a[href$="#booking"] {
+    display: none;
+  }
+}
+
+/* Legal navigation remains separate from the primary booking navigation. */
+body footer .legal-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  padding-block: 24px;
+  border-top: 1px solid rgba(255,255,255,.18);
+}
+body footer .legal-navigation h2 { margin: 0; font-size: 14px; font-weight: 600; line-height: 1.5; }
+body footer .legal-navigation ul { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; padding: 0; margin: 0; }
+body footer .legal-navigation a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; font-weight: 400; text-decoration: none; }
+body footer .legal-navigation a:hover { text-decoration: underline; text-underline-offset: 4px; }
+body .policy-content { max-width: 760px; margin-inline: auto; padding-block: 64px 88px; }
+body .policy-content section + section { margin-top: 36px; }
+body .policy-content h2 { font-size: 1.375rem; font-weight: 600; margin: 0 0 12px; }
+body .policy-content p { margin: 0 0 16px; }
+body .policy-content a { color: #0066cc; text-decoration: underline; text-underline-offset: 3px; }
+body .policy-notice { padding: 20px 24px; border-radius: 16px; background: #f5f5f7; margin-bottom: 36px; }
+@media (max-width: 768px) {
+  body footer .legal-navigation { align-items: flex-start; flex-direction: column; gap: 12px; }
+  body footer .legal-navigation ul { flex-direction: column; gap: 0; }
+  body .policy-content { padding-block: 48px 64px; }
+}
+body footer .legal-navigation a::after { display: none; }
+body footer .legal-navigation h2::after { display: none; }
+body footer .legal-navigation a[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
+body .policy-content { overflow-wrap: anywhere; }
+
+/* Copyright is the final footer row on every page. */
+body footer .footer-copyright {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px 24px;
+  margin: 0;
+  padding: 24px 0;
+  border-top: 1px solid rgba(255,255,255,.18);
+  text-align: left;
+}
+body footer .footer-copyright p {
+  margin: 0;
+  font-family: var(--qt-font-body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+body footer .footer-copyright > p:first-child { flex: 1; min-width: 0; }
+body footer .footer-copyright .footer-credit { flex: 0 1 160px; text-align: right; }
+@media (max-width: 768px) {
+  body footer .footer-copyright {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-block: 24px;
+    text-align: center;
+  }
+  body footer .footer-copyright > p:first-child {
+    flex: none;
+    max-width: 100%;
+    text-wrap: balance;
+  }
+  body footer .footer-copyright .footer-credit {
+    flex: none;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* Give contact details a readable column and align icons with the first line. */
+body footer .footer-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+body footer .footer-grid > * { min-width: 0; }
+body footer :is(.footer-contact-item,.contact-info li) {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: start;
+  column-gap: 10px;
+  font-size: 13px;
+  line-height: 1.65;
+  text-align: left;
+}
+body footer :is(.footer-contact-item,.contact-info li) > i {
+  width: 18px;
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1.532;
+  text-align: center;
+}
+body footer .footer-email {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--qt-font-body);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+body footer .footer-email:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (min-width: 601px) and (max-width: 1100px) {
+  body footer .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  body footer .footer-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Fleet cards: large vehicle photo, corner price, and a two-column spec list. */
+body .fleet-section { background: #f5f5f7; }
+body #fleetGrid .car-card { border-radius: 28px; background: #fff; border: 1px solid #e9e9ed; }
+body #fleetGrid .car-image {
+  height: 300px;
+  flex: 0 0 300px;
+  background: #fff;
+}
+body #fleetGrid .car-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 68px 12px 4px;
+  object-fit: contain;
+}
+body #fleetGrid .fleet-price-badge {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 124px;
+  padding: 10px 12px;
+  border-radius: 16px 16px 6px 16px;
+  color: #fff;
+  background: var(--primary, #007fff);
+  text-align: center;
+  pointer-events: none;
+}
+body #fleetGrid .fleet-price-caption { font-size: 11px; font-weight: 500; line-height: 1.5; }
+body #fleetGrid .fleet-price-amount { font-size: 20px; font-weight: 750; line-height: 1.25; letter-spacing: -.04em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+body #fleetGrid .fleet-price-duration { font-size: 12px; font-weight: 500; line-height: 1.4; }
+body #fleetGrid .car-badge { top: 20px; left: 16px; }
+body #fleetGrid .car-badge .badge { border-radius: 999px; font-size: 10px; padding: 5px 9px; }
+body #fleetGrid .car-info { padding: 12px 24px 24px; }
+body #fleetGrid .car-header { min-height: 82px; margin-bottom: 12px; }
+body #fleetGrid .car-title h3 { margin-bottom: 8px; font-size: clamp(1.3rem,1.8vw,1.55rem); font-weight: 750; line-height: 1.2; letter-spacing: -.035em; }
+body #fleetGrid .car-title p { color: var(--primary, #007fff); font-size: 15px; font-weight: 500; line-height: 1.5; }
+body #fleetGrid .car-features {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 16px 12px;
+  margin: 0 0 20px;
+  padding: 20px 0;
+  border-block: 1px solid #ededf0;
+}
+body #fleetGrid .car-feature { gap: 10px; font-size: 14px; line-height: 1.5; color: #424245; }
+body #fleetGrid .car-feature span { white-space: normal; overflow-wrap: anywhere; }
+body #fleetGrid .car-feature i { color: #515155; font-size: 20px; width: 22px; flex: 0 0 22px; text-align: center; }
+body #fleetGrid [data-spec="transmission"] { order: 1; }
+body #fleetGrid [data-spec="year"] { order: 2; }
+body #fleetGrid [data-spec="fuel"] { order: 3; }
+body #fleetGrid [data-spec="seats"] { order: 4; }
+body #fleetGrid .car-pricing { margin-top: auto; margin-bottom: 20px; padding: 16px; gap: 12px; background: #f5f5f7; border-radius: 16px; }
+body #fleetGrid .car-price-row { grid-template-columns: minmax(0,1fr) auto; gap: 12px; align-items: center; }
+body #fleetGrid .car-price-label { margin: 0 !important; text-align: left !important; align-self: center; font-size: 12px; line-height: 1.5; }
+body #fleetGrid .car-price-value { color: #1d1d1f; font-size: 14px; }
+body #fleetGrid .car-price-unit { font-size: 11px; }
+body #fleetGrid .car-cta { gap: 10px; }
+body #fleetGrid .car-cta .btn { min-height: 44px; border-radius: 999px; padding: 10px 14px; font-size: 13px; }
+@media (max-width: 768px) {
+  body #fleetGrid .car-image { height: 290px; flex-basis: 290px; }
+  body #fleetGrid .car-header { min-height: 0; }
+  body #fleetGrid .car-title h3 { font-size: 24px; }
+}
+@media (max-width: 380px) {
+  body #fleetGrid .car-info { padding-inline: 18px; }
+  body #fleetGrid .car-image { height: 260px; flex-basis: 260px; }
+  body #fleetGrid .car-feature { gap: 7px; font-size: 13px; }
+}
+
+/* Mobile audit: readable small text and controls on white and pale surfaces. */
+:root {
+  --primary: #0066cc;
+  --text-muted: #526176;
+  --gray: #526176;
+}
+body :is(.section-subtitle, .car-price-label, .car-price-unit, .fleet-more p, .booking-info > p) {
+  color: #526176;
+}
+body .filter-btn:not(.active) { color: #526176; }
+body :is(.btn-outline-blue, .btn-white, .read-more, .experience-date) { color: #005ebd; }
+body .hero .btn-white { color: #fff; background: #0066cc; }
+body :is(.badge-blue, .blog-category, .category-badge, .stat-icon, .faq-cta) { background: #0066cc; }
+body .badge-orange { color: #fff; background: #b54708; }
+body .btn-wa { color: #fff; background: #08783e; }
+body .btn-wa:hover { background: #066232; }
+body .faq-intro p { color: #526176; }
+@media (max-width: 768px) {
+  /* Prevent iOS from zooming the viewport when a form field receives focus. */
+  body :is(input, select, textarea) { font-size: 16px; }
+  body :is(.blog-filter, .social-links a, .social-link) { min-height: 44px; }
+}
+body .exp-card-bg { width: 100%; height: 100%; object-fit: cover; }
+body .cta-box { background: #0066cc; }
+body .article-share .share-whatsapp { background: #087b6e; }
+body .article-share .share-facebook { background: #0866d5; }

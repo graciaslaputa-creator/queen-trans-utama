@@ -1,0 +1,129 @@
+/* Page-scoped corrections, loaded after shared styles to keep their cascade explicit. */
+@media (max-width: 1024px) {
+  body.about-page #header .nav-cta > .btn {
+    display: none;
+  }
+
+  body.about-page .contact-panel {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  body.about-page #header {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  body.about-page #header > .container {
+    padding-inline: 16px;
+  }
+
+  body.about-page #header .nav-cta {
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  body.about-page .about-hero {
+    padding-block: 44px;
+  }
+
+  body.about-page .about-hero h1 {
+    font-size: clamp(1.875rem, 8vw, 2.5rem);
+    line-height: 1.18;
+  }
+
+  body.about-page :is(.company-section, .legal-section, .contact-section) {
+    padding-block: 48px;
+  }
+
+  /* Shared mobile typography uses !important; override only on this page. */
+  body.about-page main :is(p, .company-points small) {
+    text-align: left !important;
+    text-align-last: auto;
+    hyphens: none;
+  }
+
+  body.about-page main :is(h2, .section-kicker) {
+    max-width: 100%;
+    margin-inline: 0;
+    text-align: left !important;
+  }
+
+  body.about-page main .about-hero :is(.eyebrow, .hero-copy) {
+    text-align: center !important;
+  }
+
+  body.about-page main .company-points small {
+    text-align: center !important;
+  }
+
+  body.about-page .hero-actions .btn {
+    min-height: 48px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  body.about-page main .legal-row {
+    grid-template-columns: 42px minmax(0, 1fr);
+    align-items: start;
+    justify-items: stretch;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  body.about-page main .legal-row > div {
+    text-align: left;
+  }
+
+  body.about-page .legal-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  body.about-page .verification-links {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  body.about-page .verification-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+  }
+
+  body.about-page .contact-panel {
+    width: calc(100% - 32px);
+    padding: 24px 16px;
+  }
+
+  body.about-page .contact-list > * {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
+
+  body.about-page .contact-list i {
+    width: 36px;
+    height: 36px;
+  }
+
+  body.about-page footer .footer-copyright p {
+    text-align: center !important;
+    text-align-last: auto;
+  }
+
+  body.about-page .floating-wa {
+    width: 48px;
+    height: 48px;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    font-size: 24px;
+  }
+
+  body.about-page footer {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
+}
